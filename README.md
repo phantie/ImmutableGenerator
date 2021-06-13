@@ -22,4 +22,5 @@ Immutable generator implementation via generator factories
     # nice chaining
     assert g0.next_generator.next_value == 1
     assert g0.next_generator.next_generator.next_value == 2
+    assert g0.next_generator.next_generator.next_generator.next_value == 3
 ```
