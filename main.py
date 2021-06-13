@@ -20,3 +20,9 @@ class ImmutableGenerator:
             self.__class__(lambda: g))
 
         return self.cached_result
+
+    def next_value(self):
+        return next(self)[0]
+
+    def next_generator(self):
+        return next(self)[1]
