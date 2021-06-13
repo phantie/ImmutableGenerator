@@ -21,8 +21,10 @@ class ImmutableGenerator:
 
         return self.cached_result
 
+    @property
     def next_value(self):
         return next(self)[0]
 
+    @property
     def next_generator(self):
         return next(self)[1]
