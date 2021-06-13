@@ -13,11 +13,13 @@ Immutable generator implementation via generator factories
     v3, g3 = next(g2)
     assert v3 == 2
 
-    again_v1, _ = next(g0)
+    # several ways to get next value
+    again_v1 = g0.next_value
     assert again_v1 == 0
     again_v1, _ = next(g0)
     assert again_v1 == 0
-    again_v3, _ = next(g2)
-    assert again_v3 == 2
 
+    # nice chaining
+    assert g0.next_generator.next_value == 1
+    assert g0.next_generator.next_generator.next_value == 2
 ```
